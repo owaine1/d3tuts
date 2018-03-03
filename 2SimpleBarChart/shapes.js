@@ -26,7 +26,7 @@ svg.selectAll("circle")
     .data(dataArray)
     .enter().append("circle")
     .attr("cx", function (dataPoint, index) {
-        newX = +(dataPoint * 6) + (index * 20);
+        newX += (dataPoint * 6) + (index * 20);
         return newX;
     })
     .attr("cy", "100")
