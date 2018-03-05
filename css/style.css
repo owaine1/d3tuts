@@ -1,0 +1,45 @@
+html,
+body {
+        margin: 0;
+        height: 100%;
+}
+
+line {
+        stroke: red;
+}
+
+g.group0 path,
+g.group0 circle {
+        stroke: red;
+        fill: none;
+}
+
+g.group1 path,
+g.group1 circle {
+        stroke: blue;
+        fill: none;
+}
+
+g.group2 path,
+g.group2 circle {
+        stroke: green;
+        fill: none;
+}
+
+g.group3 path,
+g.group3 circle {
+        stroke: yellow;
+        fill: none;
+}
+
+g.group4 path,
+g.group4 circle {
+        stroke: purple;
+        fill: none;
+}
+
+g.group5 path,
+g.group5 circle {
+        stroke: orange;
+        fill: none;
+}

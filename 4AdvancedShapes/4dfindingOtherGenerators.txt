@@ -1,0 +1,5 @@
+Suggests goto https://github.com/d3/d3/blob/master/API.md#interpolators-d3-interpolate
+
+cmd + f and search for generator
+
+bl.locks.org has boilerplate code
