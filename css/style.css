@@ -8,6 +8,15 @@ line {
         stroke: red;
 }
 
+g.tick line {
+        stroke: blue;
+}
+
+g.tick text {
+        font-size: 1em;
+        fill: purple;
+}
+
 g.group0 path,
 g.group0 circle {
         stroke: red;
