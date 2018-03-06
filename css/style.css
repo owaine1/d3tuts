@@ -8,6 +8,11 @@ line {
         stroke: red;
 }
 
+g.hidden line,
+g.hidden path {
+        display: none;
+}
+
 g.tick line {
         stroke: blue;
 }
