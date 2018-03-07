@@ -1,10 +1,18 @@
 var dataArray = [5, 11, 18];
 var dataDays = ['Mon', 'Wed', "Fri"];
 
+// supply algorithm in scale. domain: range of colors in spectrum 0–10 vs the complete range e.g. 0–255
+var rainbow = d3.scaleSequential(d3.interpolateRainbow).domain([0, 10]);
+var rainbow2 = d3.scaleSequential(d3.interpolateRainbow).domain([0, 3]);
+
+var cat20 = d3.schemeCategory20; // Category20 is a very common scheme, will see a lot
+console.log(cat20);
+
 var x = d3.scaleBand() // was d3.scaleOrdinal() / then d3.scalePoint()
     .domain(dataDays)
     .range([0, 170]) // was [25, 85, 145] / then [0, 170]
     .paddingInner(.1176) // percent of chart dedicated to whitespace
+
 var xAxis = d3.axisBottom(x);
 
 var svg = d3.select("body").append("svg")
@@ -25,7 +33,9 @@ svg.selectAll("rect")
     .attr("height", function (dataPoint) {
         return dataPoint * 15;
     })
-    .attr("fill", "pink");
+    .attr("fill", function (d, i) {
+        return rainbow(i)
+    });
 
 svg.append("g")
     .attr("class", "x axis hidden")
@@ -45,6 +55,9 @@ svg.selectAll("circle.first")
     .attr("cy", 100)
     .attr("r", function (dataPoint) {
         return dataPoint * 3;
+    })
+    .attr("fill", function (d, i) {
+        return rainbow2(i);
     });
 
 // creating an elipse
@@ -61,7 +74,10 @@ svg.selectAll("ellipse.second")
     .attr("rx", function (dataPoint) {
         return dataPoint * 3;
     })
-    .attr("ry", 30);
+    .attr("ry", 30)
+    .attr("fill", function (d, i) {
+        return cat20[i];
+    });
 
 // line. More copy and paste code! Though good to know a typeof boilerplate
 var newX = 900; // bad but live with it again
@@ -140,3 +156,7 @@ svg.append("line")
     .attr("y1", 150)
     .attr("x2", newX)
     .attr("y2", 210);
+
+// d3 offers plugin called scale chromatic https://github.com/d3/d3-scale-chromatic
+// gives access to Cynthia Brewer Color scales
+// of note http://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3 note beware of rabbithole!
