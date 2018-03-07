@@ -8,6 +8,12 @@ line {
         stroke: red;
 }
 
+path {
+        stroke: green;
+        stroke-width: .125em;
+        fill: none;
+}
+
 g.hidden line,
 g.hidden path {
         display: none;
