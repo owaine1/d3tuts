@@ -1,0 +1,20 @@
+https://bl.ocks.org/madebyafox/b06c2730ae41d3da201c
+explains Linear, Logarithmic, Natural Logarithmic, SquareRoot and
+Power^2
+
+http://bl.ocks.org/syntagmatic/29bccce80df0f253c97e
+Quantile, Quantize, Threshold Scales
+
+Quantile e.g divide data into 100 groups creating percentiles
+i.e. percentile = quantile with 100 sections
+
+quartile is a quantile with 4 sections
+
+Quantize scales split data into even sections. Map data to discrete set of outputs. e.g domain = 0–100. Array = [2, 3, 8];
+
+input of 32 outputs 2, input 33 outputs 3.
+
+Threshold scale allows to set arbitrary values.
+Usually theres a min and amx with most scales.
+
+https://bl.ocks.org/mbostock/4573883 shows anything above 50% as bad. Anything smaller is split into smaller uneven categories.
