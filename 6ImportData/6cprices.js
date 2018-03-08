@@ -5,7 +5,7 @@
 //  is looking for seperation '/'. Put : or - if dataset contains those
 var parseDate = d3.timeParse("%d/%m/%Y");
 
-d3.csv("prices.csv")
+d3.csv("6cPrices.csv")
     .row(function (d) {
         return {
             month: parseDate(d.month),
