@@ -75,3 +75,41 @@ d3.json("6eTreeData.json").get(function (error, data) {
     // console.log(data[0].children[0].children[1].name);
 
 });
+
+// *    *   *   *   *   *   *   *   *   *   *    *   *
+
+// *    If you can avoid using a text file, DO!  *   *
+
+// *    *   *   *   *   *   *   *   *   *   *    *   *
+
+// d3 pulls text in as 1 long string.
+d3.text("6gTest.txt").get(function (error, data) {
+    var myTabPos = [];
+    var myNewLinePos = [];
+
+    var tabVal = '\\b\t\b';
+    var tabMod = 'g';
+    var tabRegExp = new RegExp(tabVal, tabMod);
+
+    var lineVal = '\\b\n\\b';
+    var lineMod = 'g';
+    var lineRegExp = new RegExp(lineVal, lineMod);
+
+    data.replace(tabRegExp, function (itemFound, itemLocation) {
+        myTabPos.push(itemLocation);
+        return itemFound;
+    });
+    data.replace(lineRegExp, function (itemFound, itemLocation) {
+        myNewLinePos.push(itemLocation);
+        return itemFound;
+    });
+    // console.log(myTabPos);
+    // console.log(myNewLinePos);
+
+
+});
+
+// Using data from HTML
+
+// d3 allows you to download webpages or parts of webpages...
+// cleaner to scrape data off webpage (if you have permission)
