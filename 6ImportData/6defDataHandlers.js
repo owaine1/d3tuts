@@ -13,6 +13,8 @@ d3.csv("6cPrices.csv")
 
         });
 
+// *    *   *   *   *
+
 // note tsv file: whitespace must be tabs. Check. Double spaces don't work.
 d3.tsv("6dPrices.tsv")
     .row(function (d) {
@@ -25,6 +27,9 @@ d3.tsv("6dPrices.tsv")
         function (error, data) {
             // console.log(data);
         });
+
+// *    *   *   *   *
+
 // this is for dsv (yes has text handler)
 var psv = d3.dsvFormat("|")
 d3.text("6dPrices.txt") // was 6dPrices
@@ -42,12 +47,31 @@ d3.text("6dPrices.txt") // was 6dPrices
             // console.log(newRows);
         });
 
+// *    *   *   *   *
+
+d3.xml("6fData.xml").get(function (error, data) {
+    // console.log(data); // in console appears as a document
+    // console.log(data.documentElement);
+
+    // methods for returning letters and ignoring frequencies
+    // 1 js way
+    // var xmlLetter = data.documentElement.getElementsByTagName("letter");
+    // console.log(xmlLetter); // shows array containing letters
+
+    // 2 d3 way
+    var letterNodes = d3.select(data).selectAll("letter")._groups[0][0]; // before without _groups...
+    console.log(letterNodes);
+
+
+});
+
+// *    *   *   *   *
 
 d3.json("6eTreeData.json").get(function (error, data) {
     // console.log(data);
     // console.log(data[0]);
-    console.log(data[0].children);
-    console.log(data[0].children[0].children[1]);
-    console.log(data[0].children[0].children[1].name);
+    // console.log(data[0].children);
+    // console.log(data[0].children[0].children[1]);
+    // console.log(data[0].children[0].children[1].name);
 
 });
