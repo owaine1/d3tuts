@@ -39,5 +39,15 @@ d3.text("6dPrices.txt") // was 6dPrices
                 });
             }
             // console.log(rows);
-            console.log(newRows);
+            // console.log(newRows);
         });
+
+
+d3.json("6eTreeData.json").get(function (error, data) {
+    // console.log(data);
+    // console.log(data[0]);
+    console.log(data[0].children);
+    console.log(data[0].children[0].children[1]);
+    console.log(data[0].children[0].children[1].name);
+
+});
