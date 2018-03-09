@@ -1,0 +1,6 @@
+Layouts are like d3 generators
+Input data and output (x,y) coordinates
+
+Some layouts do more.
+
+Layouts make it easier to make complex graphics.
