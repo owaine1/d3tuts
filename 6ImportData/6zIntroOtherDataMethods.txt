@@ -1,0 +1,40 @@
+
+d3.request(url)
+    .row(function(d){*formatRow*}) // some of the handlers
+    .get(callback); 
+
+// can write above:
+
+d3.request(url, formatRow, callback);
+
+// could also write (but thinks messy):
+
+d3.request(url, 
+            function(d){return format(d);},
+            function(error, rows){
+                //do something
+            }
+        );
+
+// neater way:
+
+d3.request(url, formatRow, callback);
+
+function formatRow() {
+    return format(d);
+}
+
+function callback(){
+    // do something with data
+}
+
+//  *     *   *   * *
+more about request see https://github.com//d3/d3-request
+
+note should have error in callback:
+
+function callback(error, rows){
+    if(error){
+        throw error;
+    }
+}

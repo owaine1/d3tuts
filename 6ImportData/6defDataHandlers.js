@@ -60,7 +60,7 @@ d3.xml("6fData.xml").get(function (error, data) {
 
     // 2 d3 way
     var letterNodes = d3.select(data).selectAll("letter")._groups[0][0]; // before without _groups...
-    console.log(letterNodes);
+    // console.log(letterNodes);
 
 
 });
@@ -113,3 +113,13 @@ d3.text("6gTest.txt").get(function (error, data) {
 
 // d3 allows you to download webpages or parts of webpages...
 // cleaner to scrape data off webpage (if you have permission)
+// this won't work for all sites. The site will not allow you to take data if it chooses not to.
+// its the CORS (cross-orign resource sharing)
+// cors e.g. toggle from https://enable-cors.org to https://google.com and will be blocked
+d3.html("https://google.com").get(function (error, data) {
+    var frag = data.querySelector("div");
+    console.log(data);
+    console.log(frag);
+
+
+});
