@@ -1,0 +1,46 @@
+Tidy Tree vs Dendrogram
+https://bl.ocks.org/mbostock/e9ba78a2c1070980d1b530800ce7fa2b
+
+Also radial tree 
+https://bl.ocks.org/mbostock/4063550
+
+and radial clustor dendrogram
+https://bl.ocks.org/mbostock/4339607
+
+Nest Tree map
+https://bl.ocks.org/mbostock/2838bf53e0e65f369f476afd653663a2
+
+Rainbow Treemap
+https://bl.ocks.org/mbostock/e6962a152275373f8504
+
+Circle-Packing
+https://bl.ocks.org/mbostock/ca5b03a33affa4160321
+
+Example Authors
+https://bl.ocks.org/mbostock/3cba6ac2fac09e5483bf6c1fade733be
+
+Partition layout
+https://bl.ocks.org/mbostock/2e73ec84221cb9773f4c
+https://mbostock.github.io/d3/talk/20111018/partition.html
+
+leaf node is a node with no children
+
+Arc Padding III
+https://bl.ocks.org/mbostock/99f0a6533f7c949cf8b8
+
+Fixed-Radius Near Neighbors
+http://bl.ocks.org/lwthatcher/e4df794e0820e5f3ffe7cd02eac9cf87
+
+Draggable Blob II
+https://bl.ocks.org/herrstucki/7c648f0d401cb283d09fd37a61e1a9c7
+
+Histogram
+https://bl.ocks.org/mbostock/3048450
+
+Chord Diagram
+https://bl.ocks.org/mbostock/1046712
+
+Hexagonal Binning
+https://bl.ocks.org/mbostock/5583afd2a0d03b9c94918659fa151cac as a plugin
+https://bl.ocks.org/mbostock/4248145
+<script src="https://d3js.org/d3-hexbin.v0.2.min.js"> this references the plugin
