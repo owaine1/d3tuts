@@ -4,7 +4,6 @@ d3.xml("data2.xml").get(function (error, xml) {
 
     var height = 200;
     var width = 500;
-
     var margin = {
         left: 50,
         right: 50,
@@ -15,10 +14,12 @@ d3.xml("data2.xml").get(function (error, xml) {
     xml = [].map.call(xml.querySelectorAll("dat"), function (d) {
         return {
             date: parseDate(d.getAttribute("id")),
-            top: +d.querySelector("top").textContext,
-            middle: +d.querySelector("middle").textContext,
-            bottom: +d.querySelector("bottom").textContext
+            top: +d.querySelector("top").textContent,
+            middle: +d.querySelector("middle").textContent,
+            bottom: +d.querySelector("bottom").textContent
+
         };
+
     });
     // console.log(xml);
     var x = d3.scaleTime()
