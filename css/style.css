@@ -63,3 +63,18 @@ g.group5 circle {
         stroke: orange;
         fill: none;
 }
+
+rect {
+        fill: lightblue;
+        stroke: cornflowerblue;
+}
+
+circle {
+        fill: indianred;
+}
+
+text {
+        font-family: arial;
+        fill: white;
+        font-size: 0.688em;
+}
