@@ -10,7 +10,7 @@ d3.xml("data2.xml").get(function (error, xml) {
         top: 40,
         bottom: 0
     };
-    // FIXME data coming out as NaN. Think code below..
+    // FIXME data coming out as NaN. Think code below..DONE
     xml = [].map.call(xml.querySelectorAll("dat"), function (d) {
         return {
             date: parseDate(d.getAttribute("id")),
@@ -43,7 +43,7 @@ d3.xml("data2.xml").get(function (error, xml) {
 
     var area = d3.area()
         .x(function (d) {
-            return d.data.date;
+            return x(d.data.date);
         })
         .y0(function (d) {
             return y(d[0]);
@@ -55,10 +55,37 @@ d3.xml("data2.xml").get(function (error, xml) {
     var svg = d3.select("body").append("svg")
         .attr("width", "100%")
         .attr("height", "100%");
-    var charGroup = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    var chartGroup = svg.append("g").attr("transform", `translate(${margin.left}, ${margin.top})`);
 
     var stacked = stack(xml);
     console.log(stacked);
 
+    chartGroup.append("g")
+        .attr("class", "x axis")
+        .attr("transform", `translate(0, ${height})`)
+        .call(d3.axisBottom(x));
 
+    chartGroup.append("g")
+        .attr("class", "y axis")
+        .call(d3.axisLeft(y).ticks(5));
+
+    // one way to add area
+    // chartGroup.selectAll("path.area")
+    //     .data(stacked)
+    //     .enter().append("path")
+    //     .attr("class", "area")
+    //     .attr("d", function (d) {
+    //         return area(d);
+    //     });
+
+    // another way
+    chartGroup.selectAll("g.area")
+        .data(stacked)
+        .enter().append("g")
+        .attr("class", "area")
+        .append("path") //directly appending the path within the group
+        .attr("class", "area")
+        .attr("d", function (d) {
+            return area(d);
+        });
 });
