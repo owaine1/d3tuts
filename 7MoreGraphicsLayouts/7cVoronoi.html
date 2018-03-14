@@ -22,42 +22,57 @@
 <body>
     <!-- change script -->
     <script>
-        var width = 960;
-        var height = 500;
+        // not impressed by callFunction and svg redrawing everytime on window resize...
+        // responsive svg is via no height or width attributes. But these are needed for drawing...
+        d3.select(window).on("resize", callFunction);
+        callFunction();
 
-        // makes array of 100 sequential numbers, 0–99 
-        // map is like foreach loop
-        // creating array to hold x and y coords
-        var vertices = d3.range(100).map(function (d) {
-            return [
-                Math.random() * width,
-                Math.random() * height
-            ];
-        });
-        // console.log(vertices);
+        function callFunction() {
+            var svgtest = d3.select("body").select("svg");
+            if (!svgtest.empty()) {
+                svgtest.remove();
+            }
+            console.log(window.innerWidth); //from ex 9c Responsive
+            var width = window.innerWidth; // 9c
+            var height = window.innerHeight; // 9c
+            // var width = 960;
+            // var height = 500;
 
-        var voronoi = d3.voronoi().size([width, height]);
-        var svg = d3.select('body').append('svg').attr('width', '100%').attr('height', '100%');
-
-        svg.append('g').attr('class', 'polygons')
-            .selectAll('path')
-            .data(voronoi.polygons(vertices)) // generate polygons on-the-fly
-            .enter().append('path')
-            .attr('d', function (d) {
-                return 'M' + d.join('L') + 'Z';
+            // makes array of 100 sequential numbers, 0–99 
+            // map is like foreach loop
+            // creating array to hold x and y coords
+            var vertices = d3.range(100).map(function (d) {
+                return [
+                    Math.random() * width,
+                    Math.random() * height
+                ];
             });
+            // console.log(vertices);
 
-        svg.append('g')
-            .attr('class', 'fuel')
-            .selectAll('circle')
-            .data(vertices).enter().append('circle')
-            .attr('cx', function (d) {
-                return d[0];
-            })
-            .attr('cy', function (d) {
-                return d[1];
-            })
-            .attr('r', 2.5);
+            var voronoi = d3.voronoi().size([width, height]);
+            var svg = d3.select('body').append('svg')
+                .attr('width', '100%').attr('height', '100%');
+
+            svg.append('g').attr('class', 'polygons')
+                .selectAll('path')
+                .data(voronoi.polygons(vertices)) // generate polygons on-the-fly
+                .enter().append('path')
+                .attr('d', function (d) {
+                    return 'M' + d.join('L') + 'Z';
+                });
+
+            svg.append('g')
+                .attr('class', 'fuel')
+                .selectAll('circle')
+                .data(vertices).enter().append('circle')
+                .attr('cx', function (d) {
+                    return d[0];
+                })
+                .attr('cy', function (d) {
+                    return d[1];
+                })
+                .attr('r', 2.5);
+        }
     </script>
 </body>
 
