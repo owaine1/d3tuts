@@ -13,6 +13,10 @@
             stroke: lightsteelblue;
         }
 
+        /* g.polygons path:hover {
+            fill: yellow;
+        } */
+
         g.fuel circle {
             fill: steelblue;
         }
@@ -28,13 +32,15 @@
         callFunction();
 
         function callFunction() {
+
+            var tooltip = d3.select("body").append("div").style("opacity", 0).style("position", "absolute");
             var svgtest = d3.select("body").select("svg");
             if (!svgtest.empty()) {
                 svgtest.remove();
             }
-            console.log(window.innerWidth); //from ex 9c Responsive
-            var width = window.innerWidth; // 9c
-            var height = window.innerHeight; // 9c
+            console.log(window.innerWidth); //from ex 9b Responsive
+            var width = window.innerWidth; // 9b
+            var height = window.innerHeight; // 9b
             // var width = 960;
             // var height = 500;
 
@@ -59,7 +65,21 @@
                 .enter().append('path')
                 .attr('d', function (d) {
                     return 'M' + d.join('L') + 'Z';
+                })
+                .on("mousemove", function (d) { // 9d
+                    tooltip.style("opacity", 1)
+                        .style("left", d3.event.pageX + "px")
+                        .style("top", d3.event.pageY + "px");
+                    // console.log(d);
+                    console.log(d3.event);
+                    tooltip.html("Number of sides: " + d.length)
                 });
+            // .on("mousemove", function () { // 9d
+            //     this.style.fill = "red";
+            // })
+            // .on("mouseout", function () {
+            //     this.style.fill = "white";
+            // });
 
             svg.append('g')
                 .attr('class', 'fuel')
