@@ -1,0 +1,58 @@
+Time Series and Numeric
+
+Discrete - Volume       Continuous - Volume
+        |                          |
+        bar                       area
+
+Discrete - Level        Continuous - Level
+        |                          |
+        dot                       line
+
+    Cyclical                Period Comparison
+        |                           |
+      radar                    rebased line
+
+Text
+Text Frequency — word cloud (using a d3 plugin)
+
+Co-occurrence — matrix (like github contribution graphic)
+
+Relationships — chord diagram 
+
+Hierarchy
+
+Hierarchy           Hierarchy 
+    |                   |
+sunburst           partition (size)
+
+Radial Tree         Flow / Process
+    |                   |
+radial Tree         tree / dendro
+
+Pack                Tree map
+    |                   |
+Pack                 treemap
+(circles within circles)
+
+Geography
+Regional — choropleth
+
+Location — spot map
+
+Sequence — tube map
+
+Distribution
+Relationship — histogram
+
+Simulation – boxplot
+
+Flow – scatterplot
+
+Other
+Relationship — relationship
+
+Simulation – force-directed
+
+Flow – network
+
+

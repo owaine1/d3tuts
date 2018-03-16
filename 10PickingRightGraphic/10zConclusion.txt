@@ -1,0 +1,21 @@
+Resources
+plugins
+note many will still be version 3 not new version4
+
+Find plugins:
+https://github.com/d3/d3/wiki/Plugins
+
+Using API references
+https://github.com/d3/d3/blob/master/API.md
+
+also https://github.com/d3/d3/wiki
+also https://bost.ocks.org/mike/
+
+D3 with other libraries
+http://nvd3.org/ (link works in safari not chrome!)
+http://square.github.io/crossfilter/
+https://dc-js.github.io/dc.js/ blends d3 an crossfitter into one package
+
+Aside for R programmers shiny.rstudio.com
+
+can use d3 with Microsofts Power BI (stands for business intelligence)

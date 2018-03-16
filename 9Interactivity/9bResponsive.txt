@@ -18,3 +18,12 @@ Any attribute that can be set in d3 can be changed over time
 see 7cVoronoi.html adding to further
 Final transform info, can change rate of acceleration, called ease (same as CSS).
 https://bl.ocks.org/mbostock/248bac3b8e354a9103c4
+
+9g Drag and Zoom
+https://bl.ocks.org/mbostock/3127661b6f13f9316be745e77fdfb084
+
+Dragging individual elements
+https://bl.ocks.org/mbostock/ec10387f24c1fad2acac3bc11eb218a5
+
+Brush and zoom
+https://bl.ocks.org/mbostock/34f08d5e11952a80609169b7917d4172
