@@ -1,2 +1,20 @@
-see additions to 7cVononoi.html (contains js)
+see additions to 7cVoronoi.html (contains js)
 9c Interactivity with CSS (very basic!)
+
+9d & e still on 7cVoronoi.html
+9e is Introducing dispatch.
+Firing an event before a user does anything and / or fire off an event after user has done something:
+use dispatch. Uses d3.dispatch
+
+Dispatch useful when trying to coordinate multiple changes from one event.
+https://bl.ocks.org/mbostock/5872848
+
+9f Transitions
+https://bl.ocks.org/mbostock/346f4d967650b27c0511
+Polar Clock II
+https://bl.ocks.org/mbostock/b89c89ec6b58435956a1
+Any attribute that can be set in d3 can be changed over time
+
+see 7cVoronoi.html adding to further
+Final transform info, can change rate of acceleration, called ease (same as CSS).
+https://bl.ocks.org/mbostock/248bac3b8e354a9103c4

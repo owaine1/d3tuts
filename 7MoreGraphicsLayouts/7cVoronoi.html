@@ -67,12 +67,16 @@
                     return 'M' + d.join('L') + 'Z';
                 })
                 .on("mousemove", function (d) { // 9d
-                    tooltip.style("opacity", 1)
-                        .style("left", d3.event.pageX + "px")
-                        .style("top", d3.event.pageY + "px");
+                    // console.log(d3.event);
+                    console.log(d);
+
+                    // not a fan of style, maybe create class and add to CSS better?
+                    tooltip.style("opacity", "1")
+                        .style("left", d[0][0] + "px") // d[0] is coords of corners of polygons
+                        .style("top", d[0][1] + "px");
                     // console.log(d);
                     console.log(d3.event);
-                    tooltip.html("Number of sides: " + d.length)
+                    tooltip.html("Number of sides: " + d.length);
                 });
             // .on("mousemove", function () { // 9d
             //     this.style.fill = "red";
@@ -92,6 +96,25 @@
                     return d[1];
                 })
                 .attr('r', 2.5);
+
+            // 9e using dispatch
+            // transition() must go after selection and before the ting you want to change
+            // length of transition default = 250ms
+            // code block style suggests: selection, transition, then attribute style
+            // d3.select("g.polygons").select("path:nth-child(30)")
+            //     .transition().duration(1000)
+            //     .style("fill", "red")
+            //     .transition().duration(1000).delay(1000) //9f 1 second
+            //     .style("fill", "blue")
+            // // .style("opacity", .2)
+            // ;
+
+            //9f using transform translate() showing d3 automatic interpolation of x,y axes 
+            d3.select("g.polygons").select("path:nth-child(30)")
+                .transition().duration(1000)
+                .style("fill", "blue")
+                .attr("transform", "translate(10 10)")
+            d3.select("g.polygons").select("path:nth-child(30)").dispatch("mousemove"); // ref. line 69
         }
     </script>
 </body>
